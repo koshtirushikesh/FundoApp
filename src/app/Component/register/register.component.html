@@ -1,0 +1,57 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="60" fxLayout="row" >
+        <div fxLayout="column" style="margin: 25px;">
+            <mat-card-content  fxLayout="row" style="padding: 25px 0px 0px 0px; font-size: x-large; font-weight: bold;" >
+                <div class="f">F</div>
+                <div class="u">u</div>
+                <div class="n">n</div>
+                <div class="d">d</div>
+                <div class="o">o</div>
+                <div class="n"> N</div>
+                <div class="o">o</div>
+                <div class="t">t</div>
+                <div class="e">e</div>
+            </mat-card-content>
+            <mat-card-content  style=" font-size: 20px;">Create your Fundo Note Account</mat-card-content>
+
+         <form fxFlex="90" [formGroup]="registerForm" (ngSubmit)="registerSubmit()" >
+            <div>
+                <mat-form-field appearance="outline" >
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" placeholder="First Name">
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="padding-left: 10px;">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Last Name">
+                </mat-form-field>
+            </div>
+            <div >
+                <mat-form-field appearance="outline" style="width:100%;">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="email" placeholder="Username or email">
+                    <mat-icon matSuffix>@gmail.com</mat-icon>
+                </mat-form-field>
+                <p style="color: rgb(14, 104, 179);">use my current email address instead</p>
+            </div>
+            <div style="padding-top: 20px;">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password" placeholder="Password">
+                </mat-form-field>
+                <mat-form-field appearance="outline" style="padding-left: 10px;">
+                    <mat-label>Confirm</mat-label>
+                    <input matInput  type="password" placeholder="Confirm">
+                </mat-form-field>
+                <mat-label fxLayout="column" style="color: gray;">Use 8 or more characters with a mix of letters, numbers &  symbols</mat-label>
+            </div>
+            <div style="padding-top: 40px; display: flex; justify-content: space-between;">
+                <a mat-flat-button href="https://www.google.com/" target="_blank" style="color: rgb(14, 104, 179);">Sign in instead</a>
+                <button mat-flat-button color="primary" fxLayoutAline="center">Create Account</button>
+            </div>
+        </form> 
+        </div> 
+        <div fxLayoutAlign="center center">
+            <img src="../../../assets/registrationIcon.png"  alt="registrationIcon" >
+        </div>
+    </mat-card> 
+</div>

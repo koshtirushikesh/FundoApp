@@ -1,0 +1,59 @@
+
+  <mat-toolbar class="navBar">
+
+    <div class="navMenuIcon" fxLayout="row">
+      <div>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon (click)="sidenav.toggle();">menu</mat-icon></button>
+      </div>
+      <div>
+        <img class="keepIcon" src="../../../assets/keep_2020q4_48dp.png" alt="KeepIcon">
+      </div>
+      <span>Keep</span>
+    </div>
+
+    <div class="searchBar" >
+      <input class="search" placeholder="Search" type="text">
+    </div>
+
+    <div class="settingBar" fxLayout="coloum" >
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"><mat-icon>refresh</mat-icon></button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"><mat-icon>grid_view</mat-icon></button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"><mat-icon>settings</mat-icon></button>
+    </div>
+
+  </mat-toolbar>                                                                
+  
+
+  <mat-sidenav-container>
+    <mat-drawer mode="push" >Drawer content</mat-drawer>
+    <mat-sidenav #sidenav >
+        <mat-nav-list class="sidenavlist">
+          <a mat-list-item>Notes</a>
+        </mat-nav-list>
+
+        <mat-nav-list class="sidenavlist">
+          <a mat-list-item>Reminder</a>
+        </mat-nav-list>
+
+        <mat-nav-list class="sidenavlist">
+          <a mat-list-item>Edit Label</a>
+        </mat-nav-list>
+
+        <mat-nav-list class="sidenavlist">
+          <a mat-list-item>Archived</a>
+        </mat-nav-list>
+        
+        <mat-nav-list class="sidenavlist">
+          <a mat-list-item>Bin</a>
+        </mat-nav-list>
+
+   </mat-sidenav>
+   <mat-sidenav-content>
+      <div style="height: 88vh;">
+        <router-outlet> 
+        </router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
