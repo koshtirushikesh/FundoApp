@@ -16,7 +16,7 @@ export class UserService {
         'Content-Type' : 'application/json'
       })
     }
-                                       // https://localhost:5001/api/User/login
+                                       // https://localhost:5001/api/
     return this.httpService.PostService(this.baseUrl+'User/login',data, false , header)
   }
 
@@ -27,5 +27,25 @@ export class UserService {
       })
     }
     return this.httpService.PostService(this.baseUrl+'User/register',data,false,header)
+  }
+
+  forgotPassword(data:any) {
+    let header = {
+      headers :new HttpHeaders({
+        'Content-Type' : 'application/json'
+      })
+    }
+    return this.httpService.PostService(this.baseUrl+'User/forgot-password?email='+data.Email ,{},false,header)
+  }
+
+  resetPassword(data:any,token:string){
+    console.log("reset token :->"+token) 
+    let header = {
+      headers : new HttpHeaders({
+        'Content-type' : 'application/json',
+        'Authorization' : 'Bearer ' + token
+      })
+    }
+    return this.httpService.PostService(this.baseUrl+'User/reset-password',data,true,header)
   }
 }
