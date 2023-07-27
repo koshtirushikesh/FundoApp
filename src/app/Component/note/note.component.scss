@@ -1,0 +1,66 @@
+.card {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card {
+    min-width: 500px;
+    margin : 30px;
+    padding: 5px 5px;
+    border: 1px solid black;
+    width: 45vw;
+}
+
+.mat-card {
+    box-shadow: 
+    0px 2px 10px -1px rgba(0, 0, 0, 0.2), 
+    0px 1px 10px 0px rgba(0, 0, 0, 0.14), 
+    0px 1px 30px 0px rgba(0, 0, 0, 0.12);
+}
+
+mat-card-content ,mat-nav-list{
+    padding: 0px;
+    border: 0px solid black;
+}
+
+input{
+    width: 90%;
+    display: inline;
+    padding:10px;
+    outline: none;
+    border: none;
+    
+}
+
+.noteIconContentListIcon{
+    width: 19px;
+    height: auto;
+    
+}
+
+.noteIconContent {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border: 0px solid red;
+}
+
+.noteIconContentList{
+    width: 23vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    display: flex;
+    flex-flow: row;
+}
+#title,#note {
+    font-size: 15px;
+    font-weight: bold;
+    color: gray;
+}
+.titlePin {
+    width: 25px;
+    height: auto;
+}

@@ -1,0 +1,35 @@
+
+<div class="card">
+    <mat-card>
+        <mat-card-content (click)="sidenav">
+            <input id="note" placeholder="Take a note...">
+        </mat-card-content>
+    </mat-card>
+</div>
+<div class="card" #sidenav>
+    <mat-card>
+        <mat-card-content class="title">
+            <input id="title" placeholder="Title">
+            <button mat-icon-button><img class="titlePin" mat-card-avatar src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.png"></button>
+        </mat-card-content>
+
+        <mat-card-content class="note">
+            <input id="note" placeholder="Take a note...">
+        </mat-card-content>
+
+        <mat-card-content class="noteIconContent">
+            <mat-nav-list class="noteIconContentList">
+                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"></button>
+                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.png"></button>
+                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.png"></button>
+                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.png"></button>
+                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.png"></button>
+                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"></button>
+            </mat-nav-list>
+            <mat-nav-list style="display:flex; justify-content: center; align-items: center;">
+                <button mat-flat-button >Close</button>
+            </mat-nav-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+
