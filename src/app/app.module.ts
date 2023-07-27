@@ -22,6 +22,7 @@ import { MatListModule} from '@angular/material/list';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './Services/Http/http.service';
+import { NoteComponent } from './Component/note/note.component';
 
 
 
@@ -34,6 +35,7 @@ import { HttpService } from './Services/Http/http.service';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     NavBarComponent,
+    NoteComponent,
     
     
   ],

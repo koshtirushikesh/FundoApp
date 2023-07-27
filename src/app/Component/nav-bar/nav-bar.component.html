@@ -1,7 +1,7 @@
 
   <mat-toolbar class="navBar">
 
-    <div class="navMenuIcon" fxLayout="row">
+    <div class="navMenuIcon" fxLayout="row" style="display:flex; justify-content: space-between; align-items: center;">
       <div>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon (click)="sidenav.toggle();">menu</mat-icon></button>
@@ -29,23 +29,33 @@
     <mat-drawer mode="push" >Drawer content</mat-drawer>
     <mat-sidenav #sidenav >
         <mat-nav-list class="sidenavlist">
-          <a mat-list-item>Notes</a>
+          <a mat-list-item>
+            <img class="icon" src="../../../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.png">
+            Notes</a>
         </mat-nav-list>
 
         <mat-nav-list class="sidenavlist">
-          <a mat-list-item>Reminder</a>
+          <a mat-list-item>
+            <img class="icon" src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.png">
+            Reminder</a>
         </mat-nav-list>
 
         <mat-nav-list class="sidenavlist">
-          <a mat-list-item>Edit Label</a>
+          <a mat-list-item>
+            <img class="icon" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.png">
+            Edit Label</a>
         </mat-nav-list>
 
         <mat-nav-list class="sidenavlist">
-          <a mat-list-item>Archived</a>
+          <a mat-list-item>
+            <img class="icon" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.png">
+            Archived</a>
         </mat-nav-list>
         
         <mat-nav-list class="sidenavlist">
-          <a mat-list-item>Bin</a>
+          <a mat-list-item>
+            <img class="icon" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.png">
+            Bin</a>
         </mat-nav-list>
 
    </mat-sidenav>

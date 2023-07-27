@@ -5,6 +5,7 @@ import { LoginComponent } from './Component/login/login.component';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
 import { NavBarComponent } from './Component/nav-bar/nav-bar.component';
+import { NoteComponent } from './Component/note/note.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path : 'login', component : LoginComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent},
   { path: 'reset-password/:token', component : ResetPasswordComponent},
-  { path : 'nav-bar' , component : NavBarComponent }
+  { path : 'nav-bar' , component : NavBarComponent },
+  { path : 'note' , component:NoteComponent}
   
 ];
 
