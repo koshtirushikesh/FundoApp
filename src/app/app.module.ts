@@ -23,6 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './Services/Http/http.service';
 import { NoteComponent } from './Component/note/note.component';
+import { NoteToolIconComponent } from './Component/note-tool-icon/note-tool-icon.component';
+import { DisplayNotesComponent } from './Component/display-notes/display-notes.component';
+import { GetnotesComponent } from './Component/getnotes/getnotes.component';
 
 
 
@@ -36,6 +39,9 @@ import { NoteComponent } from './Component/note/note.component';
     ResetPasswordComponent,
     NavBarComponent,
     NoteComponent,
+    NoteToolIconComponent,
+    DisplayNotesComponent,
+    GetnotesComponent,
     
     
   ],
@@ -54,8 +60,9 @@ import { NoteComponent } from './Component/note/note.component';
     MatListModule,
     ReactiveFormsModule,
     HttpClientModule
+    
   ],
   providers: [ HttpService ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

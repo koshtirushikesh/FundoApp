@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+
 import { UserService } from 'src/app/Services/User/user.service';
 
 
@@ -28,8 +29,11 @@ export class LoginComponent implements OnInit {
     this.userService.Login(data).subscribe( 
       (res : any)  => {
         console.log(res);
+        localStorage.setItem('token',res.response);
+        console.log(res.response);
       }
     );
+    
   }
 }
 

@@ -6,15 +6,22 @@ import { ForgotPasswordComponent } from './Component/forgot-password/forgot-pass
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
 import { NavBarComponent } from './Component/nav-bar/nav-bar.component';
 import { NoteComponent } from './Component/note/note.component';
+import { GetnotesComponent } from './Component/getnotes/getnotes.component';
+import { DisplayNotesComponent } from './Component/display-notes/display-notes.component';
 
 
 const routes: Routes = [
+  { path : '' , redirectTo:'/login',pathMatch:'full'},
   { path : 'register', component : RegisterComponent },
   { path : 'login', component : LoginComponent},
-  { path: 'forgot-password', component: ForgotPasswordComponent},
-  { path: 'reset-password/:token', component : ResetPasswordComponent},
+  { path : 'forgot-password', component: ForgotPasswordComponent},
+  { path : 'reset-password/:token', component : ResetPasswordComponent},
   { path : 'nav-bar' , component : NavBarComponent },
-  { path : 'note' , component:NoteComponent}
+  { path : 'note' , component:NoteComponent},
+  { path : 'display-note' , component:DisplayNotesComponent},
+  { path : 'home' , component:NavBarComponent },
+  { path : 'get-note' , component:GetnotesComponent}
+
   
 ];
 

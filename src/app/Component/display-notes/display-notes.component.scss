@@ -8,7 +8,7 @@ mat-card {
     margin : 30px;
     padding: 5px 5px;
     border: 0px solid black;
-    width: 45vw;
+    width: fit-content;
 }
 
 .mat-card {
@@ -23,7 +23,7 @@ mat-card-content ,mat-nav-list{
     border: 0px solid black;
 }
 
-input{
+.titleOutput , .descriptionOutput {
     width: 90%;
     display: inline;
     padding:10px;
@@ -36,16 +36,16 @@ input{
 .noteIconContent {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     border: 0px solid red;
 }
 
-.title{
+.title {
     display: flex;
     flex-flow: row;
 }
 
-#title {
+.titleOutput {
     font-size: 18px;
     font-weight: bold;
     color: black;
@@ -61,6 +61,6 @@ input{
     font-weight: bold;
     color: gray;
 }
-#note {
+.descriptionOutput {
     font-size: 15px;
 }

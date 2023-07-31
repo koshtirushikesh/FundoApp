@@ -1,34 +1,43 @@
-<div class="card">
-    <mat-card>
-        <mat-card-content (click)="sidenav">
-            <input id="note" placeholder="Take a note...">
-        </mat-card-content>
-    </mat-card>
-</div>
-<div class="card" #sidenav>
-    <mat-card>
-        <mat-card-content class="title">
-            <input id="title" placeholder="Title">
-            <button mat-icon-button><img class="titlePin" mat-card-avatar src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.png"></button>
-        </mat-card-content>
+<div >
+    
+    <div *ngIf="display;then takeNote else inputNote"></div> 
 
-        <mat-card-content class="note">
-            <input id="note" placeholder="Take a note...">
-        </mat-card-content>
+    <ng-template #takeNote>
+        <div class="card">
+            <mat-card (click)="display = !display">
+                <mat-card-content class="note">
+                    <input id="note" (click)="display = !display" placeholder="Take a note...">
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </ng-template>
+    
+    <ng-template #inputNote>
+        <div class="card" >
+            <form [formGroup]="noteForm">
+                <mat-card>
+                    <mat-card-content class="title" >
+                        <input id="title" formControlName="title" placeholder="Title">
+                        <button mat-icon-button><img class="titlePin" mat-card-avatar src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.png"></button>
+                    </mat-card-content>
+            
+                    <mat-card-content class="note">
+                        <input id="note" formControlName="description" placeholder="Take a note...">
+                    </mat-card-content>
+            
+                    <mat-card-content class="noteIconContent">
+                        
+                        <app-note-tool-icon></app-note-tool-icon>
 
-        <mat-card-content class="noteIconContent">
-            <mat-nav-list class="noteIconContentList">
-                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"></button>
-                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.png"></button>
-                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.png"></button>
-                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.png"></button>
-                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.png"></button>
-                <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"></button>
-            </mat-nav-list>
-            <mat-nav-list style="display:flex; justify-content: center; align-items: center;">
-                <button mat-flat-button >Close</button>
-            </mat-nav-list>
-        </mat-card-content>
-    </mat-card>
-</div>
+                        <mat-nav-list style="display:flex; justify-content: center; align-items: center;">
+                            <button mat-flat-button (click)="onSubmit()" (click)="display = !display">Close</button>
+                        </mat-nav-list>
+                        
+                    </mat-card-content>
+                </mat-card>
+            </form>
+        </div>
+    </ng-template>
+
+</div >
 
