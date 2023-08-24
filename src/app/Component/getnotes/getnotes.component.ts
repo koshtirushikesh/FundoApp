@@ -15,6 +15,9 @@ export class GetnotesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  title = true;
+  isDisabled = false;
+
   onSubmit(){
     this.noteServices.getNote().subscribe( (res :any) => {
       console.log(res);
@@ -23,5 +26,4 @@ export class GetnotesComponent implements OnInit {
       console.log(this.noteArray);
     })
   }
-
 }

@@ -38,4 +38,6 @@ export class NoteService {
     }
     return this.httpService.GetServices(this.baseUrl+'Note/get-all-notes-by-userid',true,header)
   }
+
+  
 }

@@ -26,7 +26,7 @@
   
 
   <mat-sidenav-container>
-    <mat-drawer mode="push" >Drawer content</mat-drawer>
+    <mat-drawer mode="side" >Drawer content</mat-drawer>
     <mat-sidenav #sidenav >
         <mat-nav-list class="sidenavlist">
           <a mat-list-item>
@@ -62,7 +62,7 @@
 
    <mat-sidenav-content>
       <div style="height: 88vh;">
-        <router-outlet></router-outlet>
+        <app-getnotes></app-getnotes>
       </div>
     </mat-sidenav-content>
     

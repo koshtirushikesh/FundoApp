@@ -1,20 +1,24 @@
-<div *ngFor="let note of noteList" class="card" >
+<div class="noteContainer">
+  <div *ngFor="let note of noteList" class="card">
+    <mat-card>
+      <mat-card-content class="title">
+        <div class="titleOutput">{{ note.title }}</div>
+        <button mat-icon-button>
+          <img
+            class="titlePin"
+            mat-card-avatar
+            src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.png"
+          />
+        </button>
+      </mat-card-content>
 
-    <mat-card class="noteContainer">
-        <mat-card-content class="title" >
-            <div class="titleOutput">{{ note.title }}</div>
-            <button mat-icon-button><img class="titlePin" mat-card-avatar src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.png"></button>
-        </mat-card-content>
+      <mat-card-content class="note">
+        <div class="descriptionOutput">{{ note.description }}</div>
+      </mat-card-content>
 
-        <mat-card-content class="note">
-            <div class="descriptionOutput">{{note.description}}</div>
-        </mat-card-content>
-
-        <mat-card-content class="noteIconContent">
-            
-            <app-note-tool-icon></app-note-tool-icon>
-
-        </mat-card-content>
-    </mat-card>   
-
+      <mat-card-content class="noteIconContent">
+        <app-note-tool-icon></app-note-tool-icon>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

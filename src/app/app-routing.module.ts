@@ -8,6 +8,8 @@ import { NavBarComponent } from './Component/nav-bar/nav-bar.component';
 import { NoteComponent } from './Component/note/note.component';
 import { GetnotesComponent } from './Component/getnotes/getnotes.component';
 import { DisplayNotesComponent } from './Component/display-notes/display-notes.component';
+import { AuthGuard } from './Component/auth.guard';
+
 
 
 const routes: Routes = [
@@ -16,12 +18,11 @@ const routes: Routes = [
   { path : 'login', component : LoginComponent},
   { path : 'forgot-password', component: ForgotPasswordComponent},
   { path : 'reset-password/:token', component : ResetPasswordComponent},
-  { path : 'nav-bar' , component : NavBarComponent },
+  { path : 'nav-bar' , component : NavBarComponent , canActivate:[AuthGuard]},
   { path : 'note' , component:NoteComponent},
   { path : 'display-note' , component:DisplayNotesComponent},
   { path : 'home' , component:NavBarComponent },
-  { path : 'get-note' , component:GetnotesComponent}
-
+  { path : 'get-note' , component:GetnotesComponent},
   
 ];
 

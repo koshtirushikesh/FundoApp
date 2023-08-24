@@ -7,16 +7,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './Component/register/register.component';
 import { LoginComponent } from './Component/login/login.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule} from '@angular/material/card';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
 import { NavBarComponent } from './Component/nav-bar/nav-bar.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule} from '@angular/material/list';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,6 +26,10 @@ import { NoteComponent } from './Component/note/note.component';
 import { NoteToolIconComponent } from './Component/note-tool-icon/note-tool-icon.component';
 import { DisplayNotesComponent } from './Component/display-notes/display-notes.component';
 import { GetnotesComponent } from './Component/getnotes/getnotes.component';
+import { AuthGurdService } from './Services/auth/auth-gurd.service';
+
+
+
 
 
 
@@ -44,6 +48,7 @@ import { GetnotesComponent } from './Component/getnotes/getnotes.component';
     GetnotesComponent,
     
     
+    
   ],
   imports: [
     BrowserModule,
@@ -59,10 +64,13 @@ import { GetnotesComponent } from './Component/getnotes/getnotes.component';
     MatSidenavModule,
     MatListModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
+
+  ],
+  providers: [ HttpService,AuthGurdService ,
     
   ],
-  providers: [ HttpService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

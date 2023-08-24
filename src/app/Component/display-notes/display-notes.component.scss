@@ -1,14 +1,20 @@
 .card {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
 }
 
 mat-card {
-    min-width: 500px;
-    margin : 30px;
-    padding: 5px 5px;
-    border: 0px solid black;
+    margin: 20px;
+    border: 1px solid black;
     width: fit-content;
+}
+
+.noteContainer {
+    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .mat-card {
@@ -20,7 +26,7 @@ mat-card {
 
 mat-card-content ,mat-nav-list{
     padding: 0px;
-    border: 0px solid black;
+    border: px solid black;
 }
 
 .titleOutput , .descriptionOutput {
@@ -34,9 +40,6 @@ mat-card-content ,mat-nav-list{
 }
 
 .noteIconContent {
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-start;
     border: 0px solid red;
 }
 
