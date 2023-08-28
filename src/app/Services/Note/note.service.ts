@@ -39,5 +39,17 @@ export class NoteService {
     return this.httpService.GetServices(this.baseUrl+'Note/get-all-notes-by-userid',true,header)
   }
 
+  archiveAndUnArchive(id:any){
+    let header = {
+      headers:new HttpHeaders(
+        {
+          'Content-type' : 'application/json',
+          'Authorization' : 'Bearer '+ this.token,
+        }
+      )
+    }
+    return this.httpService.PostService(this.baseUrl+'Note/archive-unarchive?noteID='+id ,{ },true,header);
+  }
+
   
 }

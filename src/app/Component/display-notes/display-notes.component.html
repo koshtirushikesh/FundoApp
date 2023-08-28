@@ -3,7 +3,7 @@
     <mat-card>
       <mat-card-content class="title">
         <div class="titleOutput">{{ note.title }}</div>
-        <button mat-icon-button>
+        <button mat-icon-button  >
           <img
             class="titlePin"
             mat-card-avatar
@@ -17,7 +17,7 @@
       </mat-card-content>
 
       <mat-card-content class="noteIconContent">
-        <app-note-tool-icon></app-note-tool-icon>
+        <app-note-tool-icon [noteData]="note"></app-note-tool-icon>
       </mat-card-content>
     </mat-card>
   </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NoteService } from 'src/app/Services/Note/note.service';
 
 
 @Component({
@@ -10,9 +11,10 @@ export class DisplayNotesComponent implements OnInit {
 
   display:boolean = true;
   
-  constructor() { }
+  constructor(private note:NoteService) { }
   @Input() noteList:any;
   ngOnInit(): void {
   }
 
+  
 }

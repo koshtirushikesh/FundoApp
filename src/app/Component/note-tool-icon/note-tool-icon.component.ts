@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { NoteService } from 'src/app/Services/Note/note.service';
 
 @Component({
   selector: 'app-note-tool-icon',
@@ -6,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-tool-icon.component.scss']
 })
 export class NoteToolIconComponent implements OnInit {
+  
+  noteID:any;
+  data:any;
 
-  constructor() { }
+  @Input() noteData:any;
+  constructor(private noteServices:NoteService) { }
 
   ngOnInit(): void {
+    
+    
+  }
+
+  archieveAndUnarchive(){
+      console.log(this.noteData);
+      this.noteServices.archiveAndUnArchive(this.noteData.noteID).subscribe((response) =>
+      {
+        console.log(response);
+      });
+      console.log(this.noteData.noteID);
+
   }
 
 }

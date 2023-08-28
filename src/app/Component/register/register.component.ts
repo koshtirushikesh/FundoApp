@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+
   }
   
   registerForm = new FormGroup({

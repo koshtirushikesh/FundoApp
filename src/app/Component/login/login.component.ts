@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/User/user.service';
 
 
@@ -12,7 +13,7 @@ import { UserService } from 'src/app/Services/User/user.service';
 export class LoginComponent implements OnInit {
   
   loginForm!: FormGroup;
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private route: Router) { }
 
   ngOnInit(): void { 
     this.loginForm = new FormGroup({
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token',res.response);
         console.log(res.response);
+        this.route.navigateByUrl("/nav-bar");
       }
     );
   }
