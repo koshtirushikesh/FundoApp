@@ -16,5 +16,12 @@ export class DisplayNotesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  PinAndUnPin(id:any){
+    console.log(id);
+    this.note.PinAndUnPin(id).subscribe((response) =>
+    {
+      console.log(response);
+    });
+  }
   
 }

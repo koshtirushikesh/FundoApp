@@ -3,7 +3,7 @@
     <mat-card>
       <mat-card-content class="title">
         <div class="titleOutput">{{ note.title }}</div>
-        <button mat-icon-button  >
+        <button mat-icon-button  (click)="PinAndUnPin(note.noteID)">
           <img
             class="titlePin"
             mat-card-avatar
