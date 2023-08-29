@@ -27,7 +27,11 @@ import { NoteToolIconComponent } from './Component/note-tool-icon/note-tool-icon
 import { DisplayNotesComponent } from './Component/display-notes/display-notes.component';
 import { GetnotesComponent } from './Component/getnotes/getnotes.component';
 import { AuthGurdService } from './Services/auth/auth-gurd.service';
-
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 
 
 
@@ -65,10 +69,22 @@ import { AuthGurdService } from './Services/auth/auth-gurd.service';
     MatListModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+    SocialLoginModule,
 
   ],
   providers: [ HttpService,AuthGurdService ,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('177715554746-jd0fidg9hc36rm3t6pljrl692f5fhbb1.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
     
   ],
   bootstrap: [ AppComponent ]
