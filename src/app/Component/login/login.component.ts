@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/User/user.service';
-
+import {
+  SocialAuthService,
+  GoogleLoginProvider,
+  SocialUser,
+} from '@abacritt/angularx-social-login';
 
 
 @Component({
@@ -13,12 +17,20 @@ import { UserService } from 'src/app/Services/User/user.service';
 export class LoginComponent implements OnInit {
   
   loginForm!: FormGroup;
-  constructor(private userService:UserService,private route: Router) { }
+  socialUser!: SocialUser;
+  isLoggedin?: boolean;
+  constructor(private userService:UserService,private route: Router, private socialAuthService: SocialAuthService) { }
 
   ngOnInit(): void { 
     this.loginForm = new FormGroup({
       Email : new FormControl(''),
       Password : new FormControl('')
+    });
+
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      this.isLoggedin = user != null;
+      console.log(this.socialUser);
     });
 
   }
@@ -40,6 +52,12 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+  logOut(): void {
+    this.socialAuthService.signOut();
+  }
   
 
 }

@@ -1,32 +1,114 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="30">
+    <mat-card-content
+      fxLayoutAlign="center"
+      style="padding: 20px 20px; font-size: 25px; font-weight: bold"
+    >
+      <div class="f">F</div>
+      <div class="u">u</div>
+      <div class="n">n</div>
+      <div class="d">d</div>
+      <div class="o">o</div>
+      <div class="n">N</div>
+      <div class="o">o</div>
+      <div class="t">t</div>
+      <div class="e">e</div></mat-card-content
+    >
+    <mat-card-content fxLayoutAlign="center" style="font-size: 25px"
+      >Sign in</mat-card-content
+    >
+    <mat-card-content
+      fxLayoutAlign="center"
+      style="font-size: 15px; padding-bottom: 10px"
+      >Use your Fundo Note Account</mat-card-content
+    >
+    <form
+      fxLayoutAlign="stretch"
+      fxLayout="column"
+      [formGroup]="loginForm"
+      style="padding: 20px 20px"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Enter Your Email"
+          class="form-control"
+          formControlName="Email"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Enter Your Password"
+          class="form-control"
+          formControlName="Password"
+        />
+      </mat-form-field>
+      <div fxLayout="row" style="display: flex; justify-content: space-between">
+        <a
+          mat-flat-button
+          href="http://localhost:4200/register"
+          target="_blank"
+          style="color: rgb(14, 104, 179)"
+          >Create account</a
+        >
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          (click)="loginSubmit()"
+          fxLayout="row"
+          fxLayoutAline="center"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+    <div>
+      <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">
+        Login with Google
+      </button>
+    </div>
 
-  <div fxLayoutAlign="center center" fxFlexFill>
-    <mat-card fxFlex="30">
-      <mat-card-content fxLayoutAlign="center" style="padding: 20px 20px; font-size: 25px; font-weight: bold;" >
-        <div class="f">F</div>
-        <div class="u">u</div>
-        <div class="n">n</div>
-        <div class="d">d</div>
-        <div class="o">o</div>
-        <div class="n"> N</div>
-        <div class="o">o</div>
-        <div class="t">t</div>
-        <div class="e">e</div></mat-card-content>
-      <mat-card-content fxLayoutAlign="center" style="font-size: 25px;">Sign in</mat-card-content>
-      <mat-card-content fxLayoutAlign="center" style="font-size: 15px; padding-bottom: 10px;">Use your Fundo Note Account</mat-card-content>
-      <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="loginForm"  style="padding: 20px 20px;" >
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Enter Your Email" class="form-control" formControlName="Email">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" placeholder="Enter Your Password" class="form-control" formControlName="Password">
-        </mat-form-field>
-        <div fxLayout="row" style="display: flex; justify-content: space-between;">
-          <a mat-flat-button href="http://localhost:4200/register" target="_blank" style="color: rgb(14, 104, 179);">Create account</a>
-          <button mat-raised-button color="primary" type="submit" (click)="loginSubmit()" fxLayout="row" fxLayoutAline="center">Login</button>
-        </div>
-        
-      </form>
-    </mat-card>
-  </div>
+    <div>
+      <button type="button" (click)="logOut()" class="btn btn-primary">
+        Log Out
+      </button>
+    </div>
+    <div *ngIf="isLoggedin === true">
+      <div>
+        <label>First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [value]="socialUser.firstName"
+          id="firstname"
+          readonly
+        />
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [value]="socialUser.lastName"
+          id="lastname"
+          readonly
+        />
+      </div>
+      <div>
+        <label>Email</label>
+        <input
+          type="text"
+          class="form-control"
+          [value]="socialUser.email"
+          id="email"
+          readonly
+        />
+      </div>
+    </div>
+  </mat-card>
+</div>
