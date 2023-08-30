@@ -1,6 +1,6 @@
 <div class="noteContainer">
   <div *ngFor="let note of noteList" class="card">
-    <mat-card>
+    <mat-card [style.background]="note.colour">
       <mat-card-content class="title">
         <div class="titleOutput">{{ note.title }}</div>
         <button mat-icon-button  (click)="PinAndUnPin(note.noteID)">
