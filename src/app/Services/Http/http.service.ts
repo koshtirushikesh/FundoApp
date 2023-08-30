@@ -23,4 +23,8 @@ export class HttpService {
   DeleteServices(url:string , token:boolean=false ,httpOption: any ={ }){
     return this.http.delete(url,token&& httpOption)
   }
+
+  PatchServices(url:string , reqData:any,token:boolean=false ,httpOption: any ={ }){
+    return this.http.patch(url,reqData,token&&httpOption)
+  }
 }

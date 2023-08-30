@@ -27,7 +27,7 @@ import { NoteToolIconComponent } from './Component/note-tool-icon/note-tool-icon
 import { DisplayNotesComponent } from './Component/display-notes/display-notes.component';
 import { GetnotesComponent } from './Component/getnotes/getnotes.component';
 import { AuthGurdService } from './Services/auth/auth-gurd.service';
-
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -65,7 +65,7 @@ import { AuthGurdService } from './Services/auth/auth-gurd.service';
     MatListModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+    MatMenuModule
 
   ],
   providers: [ HttpService,AuthGurdService ,

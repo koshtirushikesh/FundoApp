@@ -11,7 +11,7 @@ export class NoteToolIconComponent implements OnInit {
   
   noteID:any;
   data:any;
-
+  colours: any = ["white","yellow","blue","purple","prink","gray","light gray"];
   @Input() noteData:any;
   constructor(private noteServices:NoteService) { }
 
@@ -28,6 +28,14 @@ export class NoteToolIconComponent implements OnInit {
       });
       console.log(this.noteData.noteID);
 
+  }
+
+  changeColour(color:any){
+    console.log(this.noteData);
+    this.noteServices.changeColour(color,this.noteData.noteID).subscribe((response) =>
+    {
+      console.log(response);
+    });
   }
 
 }

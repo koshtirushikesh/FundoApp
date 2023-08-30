@@ -62,4 +62,16 @@ export class NoteService {
     }
     return this.httpService.PostService(this.baseUrl+'Note/pin-unpinned?noteID='+id ,{ },true,header);
   }
+
+  changeColour(color:any,id:any){
+    let header = {
+      headers:new HttpHeaders(
+        {
+          'Content-type' : 'application/json',
+          'Authorization' : 'Bearer '+ this.token,
+        }
+      )
+    }
+    return this.httpService.PatchServices(this.baseUrl+'Note/change-color?color='+color+'&noteID='+id,{ },true,header); 
+  }
 }
