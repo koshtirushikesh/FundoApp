@@ -10,12 +10,18 @@
         <div *ngFor="let colour of colours">
             <button mat-menu-item (click)="changeColour(colour)">{{colour}}</button>
         </div>
-        
     </mat-menu>
 
     <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.png"></button>
     <button mat-icon-button (click)="archieveAndUnarchive()"><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.png"></button>
-    <button mat-icon-button><img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"></button>
+    <button mat-icon-button [matMenuTriggerFor]="menu1">
+        <img class="noteIconContentListIcon" mat-card-avatar src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.png">
+    </button>
+
+    <mat-menu #menu1="matMenu">
+        <button mat-menu-item (click)="trashNote()">Delete Note</button>
+    </mat-menu>
+
 </div>
     
 

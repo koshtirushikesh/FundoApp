@@ -74,4 +74,16 @@ export class NoteService {
     }
     return this.httpService.PatchServices(this.baseUrl+'Note/change-color?color='+color+'&noteID='+id,{ },true,header); 
   }
+
+  trashUnTrash(id:any){
+    let header = {
+      headers:new HttpHeaders(
+        {
+          'Content-type' : 'application/json',
+          'Authorization' : 'Bearer '+ this.token,
+        }
+      )
+    }
+    return this.httpService.PostService(this.baseUrl+'Note/trash-untrash?noteID='+id,{ } ,true,header)
+  }
 }

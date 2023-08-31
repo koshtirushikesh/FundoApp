@@ -38,4 +38,12 @@ export class NoteToolIconComponent implements OnInit {
     });
   }
 
+  trashNote(){
+    console.log(this.noteData);
+    this.noteServices.trashUnTrash(this.noteData.noteID).subscribe((response) =>
+    {
+      console.log(response);
+    })
+  }
+
 }
